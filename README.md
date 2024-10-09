@@ -1,6 +1,6 @@
 ## **PointOBB-v2: Towards Simpler, Faster, and Stronger Single Point Supervised Oriented Object Detection**
 
-[[paper]](https://arxiv.org/abs/xxxx.xxxxx)
+[[paper]](https://www.researchgate.net/publication/384735886_PointOBB-v2_Towards_Simpler_Faster_and_Stronger_Single_Point_Supervised_Oriented_Object_Detection#fullTextFileContent)
 
 ### ⭐️ Highlights
 
