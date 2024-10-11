@@ -1,6 +1,6 @@
 ## **PointOBB-v2: Towards Simpler, Faster, and Stronger Single Point Supervised Oriented Object Detection**
 
-[[paper]](https://www.researchgate.net/publication/384735886_PointOBB-v2_Towards_Simpler_Faster_and_Stronger_Single_Point_Supervised_Oriented_Object_Detection#fullTextFileContent)
+[[paper]](https://arxiv.org/abs/2410.08210)
 
 ### ⭐️ Highlights
 
@@ -110,7 +110,7 @@ If you find this work helpful for your research, please consider giving this rep
 @article{pointobbv2,
   title={PointOBB-v2: Towards Simpler, Faster, and Stronger Single Point Supervised Oriented Object Detection},
   author={Ren, Botao and Yang, Xue and Yu, Yi and Luo, Junwei and Deng, Zhidong},
-  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  journal={arXiv preprint arXiv:2410.08210},
   year={2024}
 }
 
@@ -122,7 +122,7 @@ If you find this work helpful for your research, please consider giving this rep
   year={2024}
 }
 
-@inproceedings{yu2024point2rbox,
+@inproceedings{point2rbox,
   title={Point2RBox: Combine Knowledge from Synthetic Visual Patterns for End-to-end Oriented Object Detection with Single Point Supervision},
   author={Yu, Yi and Yang, Xue and Li, Qingyun and Da, Feipeng and Dai, Jifeng and Qiao, Yu and Yan, Junchi},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
