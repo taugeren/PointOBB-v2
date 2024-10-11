@@ -74,22 +74,28 @@ class CPMHead(RotatedFCOSHead):
         self.cls_weight = 20
         self.thresh1 = 8
         self.alpha = 1
-        if kwargs.get('train_cfg')['store_dir'] is not None:
-            self.store_dir = kwargs.get('train_cfg')['store_dir']
-        elif kwargs.get('test_cfg')['store_dir'] is not None:
-            self.store_dir = kwargs.get('test_cfg')['store_dir']
+
+        train_cfg = kwargs.get('train_cfg', {})
+        test_cfg = kwargs.get('test_cfg', {})
+
+        if 'store_dir' in train_cfg:
+            self.store_dir = train_cfg['store_dir']
+        elif 'store_dir' in test_cfg:
+            self.store_dir = test_cfg['store_dir']
+
         assert self.store_dir is not None
         os.makedirs(self.store_dir + "/visualize/", exist_ok=True)
-        if kwargs.get('train_cfg')['cls_weight'] is not None:
-            self.cls_weight = kwargs.get('train_cfg')['cls_weight']
-        if kwargs.get('train_cfg')['thresh1'] is not None:
-            self.thresh1 = kwargs.get('train_cfg')['thresh1']
-        if kwargs.get('train_cfg')['alpha'] is not None:
-            self.alpha = kwargs.get('train_cfg')['alpha']
-        if kwargs.get('train_cfg')['vis_train_duration'] is not None:
-            self.train_duration = kwargs.get('train_cfg')['vis_train_duration']
-        if kwargs.get('test_cfg')['visualize'] is not None:
-            self.visualize = kwargs.get('train_cfg')['visualize']
+
+        if 'cls_weight' in train_cfg:
+            self.cls_weight = train_cfg['cls_weight']
+        if 'thresh1' in train_cfg:
+            self.thresh1 = train_cfg['thresh1']
+        if 'alpha' in train_cfg:
+            self.alpha = train_cfg['alpha']
+        if 'vis_train_duration' in train_cfg:
+            self.train_duration = train_cfg['vis_train_duration']
+        if 'visualize' in train_cfg:
+            self.visualize = train_cfg['visualize']
         
     def get_mask_image(self, max_probs, max_indices, thr, num_width):
         PALETTE = [

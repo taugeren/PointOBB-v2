@@ -74,20 +74,24 @@ class PseudoLabelHead(RotatedFCOSHead):
         self.cls_weight = 20
         self.thresh3 = 0.1
         self.multiple_factor = 1/16
-        if kwargs.get('train_cfg')['store_dir'] is not None:
-            self.store_dir = kwargs.get('train_cfg')['store_dir']
-        elif kwargs.get('test_cfg')['store_dir'] is not None:
-            self.store_dir = kwargs.get('test_cfg')['store_dir']
-        if kwargs.get('train_cfg')['thresh3'] is not None:
-            self.thresh3 = kwargs.get('train_cfg')['thresh3']
+        
+        train_cfg = kwargs.get('train_cfg', {})
+        test_cfg = kwargs.get('test_cfg', {})
+        
+        if 'store_dir' in train_cfg:
+            self.store_dir = train_cfg['store_dir']
+        elif 'store_dir' in test_cfg:
+            self.store_dir = test_cfg['store_dir']
+        if 'thresh3' in train_cfg:
+            self.thresh3 = train_cfg['thresh3']
         assert self.store_dir is not None
         os.makedirs(self.store_dir + "/visualize/", exist_ok=True)
-        if kwargs.get('train_cfg')['cls_weight'] is not None:
-            self.cls_weight = kwargs.get('train_cfg')['cls_weight']
-        if kwargs.get('train_cfg')['pca_length'] is not None:
-            self.pca_length = kwargs.get('train_cfg')['pca_length']
-        if kwargs.get('train_cfg')['multiple_factor'] is not None:
-            self.multiple_factor = kwargs.get('train_cfg')['multiple_factor']
+        if 'cls_weight' in train_cfg:
+            self.cls_weight = train_cfg['cls_weight']
+        if 'pca_length' in train_cfg:
+            self.pca_length = train_cfg['pca_length']
+        if 'multiple_factor' in train_cfg:
+            self.multiple_factor = train_cfg['multiple_factor']
         assert len(self.thresh3) == self.num_classes
         self.store_ann_dir = kwargs.get('train_cfg')['store_ann_dir']
         os.makedirs(self.store_ann_dir, exist_ok=True)
