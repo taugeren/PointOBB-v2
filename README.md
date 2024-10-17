@@ -26,7 +26,7 @@ pip install -v -e .
 
 ### 📊 Data Preparation
 
-Please follow [data_preparation](https://github.com/taugeren/PointOBB-v2/tree/main/tools/data) to prepare formatting data
+Please follow [data_preparation](https://github.com/taugeren/PointOBB-v2/tree/master/tools/data) to prepare formatting data
 
 ### 🏋️ Train CPM
 
